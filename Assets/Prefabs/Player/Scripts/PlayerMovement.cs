@@ -18,12 +18,9 @@ public class PlayerMovement : MonoBehaviour
 
         player = new Player(5f, 5f);
         //SetStrategy(new SmoothMovementStrategy());
-        SetStrategy(new AcelerateMovementStrategy());
+        //SetStrategy(new AcelerateMovementStrategy());
     }
-    void Update()
-    {
-        MovePlayer();
-    }
+
     private void FixedUpdate()
     {
         timeSinceLastForce += Time.fixedDeltaTime;
@@ -34,9 +31,9 @@ public class PlayerMovement : MonoBehaviour
             timeSinceLastForce = 0f;
         }
     }
-    public void MovePlayer()
+    public void MovePlayer(float input)
     {
-        strategy.Move(transform, player);
+        strategy.Move(transform, player, input);
     }
     public void SetStrategy(IMovementStrategy strategy)
     {

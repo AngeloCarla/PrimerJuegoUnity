@@ -1,0 +1,18 @@
+using UnityEngine;
+
+public class AcelerateMoveCommand : ICommand
+{
+    private readonly PlayerMovement playerMovement;
+    private readonly float input;
+
+    public AcelerateMoveCommand(PlayerMovement playerMovement, float input)
+    {
+        this.playerMovement = playerMovement;
+        this.input = input;
+    }
+    public void Execute()
+    {
+        playerMovement.SetStrategy(new AcelerateMovementStrategy());
+        playerMovement.MovePlayer(input);
+    }
+}
