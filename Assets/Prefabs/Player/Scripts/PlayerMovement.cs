@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-        forceToApply = new Vector3(0, 0, 300);
+        forceToApply = new Vector3(0, 0, 350);
         // forceToApply = new Vector3(0, 0, 10);
         timeSinceLastForce = 0f;
         intervalTime = 2f;
